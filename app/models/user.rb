@@ -56,6 +56,7 @@ class User < ApplicationRecord
   # Notifications & Services
   has_many :notifications, as: :recipient
   has_many :services, dependent: :destroy
+  has_many :articles
 
   # Example role set method
   def set_alt_role
