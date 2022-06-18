@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'sidekiq/web'
-require 'middleware/rack_attack'
 
 Rails.application.routes.draw do
   resources :articles
@@ -20,5 +19,5 @@ Rails.application.routes.draw do
     get 'users' => 'devise/sessions#new'
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
-  root to: 'home#index'
+  root to: 'articles#index'
 end
